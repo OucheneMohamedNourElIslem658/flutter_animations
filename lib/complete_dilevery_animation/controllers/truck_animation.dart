@@ -13,22 +13,6 @@ class Translation {
     required this.duration,
     this.curve = Curves.linear
   });
-
-  Map<String,Object> toMap(){
-    return {
-      'alignment': alignment,
-      'duration': duration,
-      'curve': curve
-    };
-  }
-
-  factory Translation.fromMap(Map<String,Object> map){
-    return Translation(
-      alignment: map['alignment'] as Alignment,
-      duration: map['duration'] as Duration,
-      curve: map['curve'] as Curve
-    );
-  }
 }
 
 class OpenDoors {
