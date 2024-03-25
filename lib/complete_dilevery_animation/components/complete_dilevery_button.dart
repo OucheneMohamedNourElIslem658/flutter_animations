@@ -7,7 +7,10 @@ import '../controllers/truck_animation.dart';
 class DeliveredButton extends StatelessWidget {
   const DeliveredButton({
     super.key,
+    required this.onTap
   });
+
+  final VoidCallback onTap;
 
 
   @override
@@ -73,7 +76,10 @@ class DeliveredButton extends StatelessWidget {
                     !truckAnimation.disableButton
                     ? Positioned.fill(
                       child: GestureDetector(
-                        onTap: () => truckAnimation.animate(),
+                        onTap: () {
+                          onTap();
+                          truckAnimation.animate();
+                        },
                         child: Container(
                           color:const Color(0xFF1B262F),
                           alignment: Alignment.center,

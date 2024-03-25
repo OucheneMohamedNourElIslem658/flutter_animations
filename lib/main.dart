@@ -23,9 +23,12 @@ class Home extends StatelessWidget {
   const Home({super.key});
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
-        child: DeliveredButton(),
+        child: DeliveredButton(
+          // ignore: avoid_print
+          onTap: () => print("deliver food"),
+        ),
       ),
     );
   }
